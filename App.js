@@ -15,32 +15,56 @@ function HomeScreen() {
 
     return (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Text>Home</Text>
-            <Text>Quelle est la distance parcourue</Text>
-            <TextInput
-                type="text" onChange={text => setDistanceParcourue(text.value)}
-                placeholder="Distance parcourue"
-            />
-            <Text>Quel est la température </Text>
-            <input
-                type="number" value={temperature} onChange={text => setTemperature(text)}
-                placeholder="Température"
-            />
-            <Text>Pluie</Text>
-            <input type="checkbox" value={pluie} onChange={e => setPluie(e.target.value)}/>
+            <View>
+                <Text>Home</Text>
+                <Text>Quelle est la distance parcourue</Text>
+                <TextInput
+                    type="text" onChange={text => setDistanceParcourue(text.value)}
+                    placeholder="Distance parcourue"
+                />
+            </View>
 
-            <Text>Dénivelé</Text>
-            <input
-                value={denivele} onChange={e => setDenivele(e.target.value)}
-                placeholder="Dénivelé"
-            />
-            <Text>Repas</Text>
-            <input
-                value={repas} onChange={e => setRepas(e.target.value)}
-                placeholder="Repas"
-            />
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text>Quel est la température </Text>
+                <input
+                    type="number" value={temperature} onChange={text => setTemperature(text)}
+                    placeholder="Température"
+                />
+            </View>
+
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text>Pluie</Text>
+                <input type="checkbox" value={pluie} onChange={e => setPluie(e.target.value)}/>
+            </View>
+
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text>Dénivelé</Text>
+                <input
+                    value={denivele} onChange={e => setDenivele(e.target.value)}
+                    placeholder="Dénivelé"
+                />
+            </View>
+
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text>Repas</Text>
+                <input
+                    value={repas} onChange={e => setRepas(e.target.value)}
+                    placeholder="Repas"
+                />
+            </View>
+
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text>Aggréable</Text>
-            {/*<Slider style={{width: 200, height: 40}} minimumValue={0} maximumValue={100} step={1} value={aggreable} onValueChange={value => setAggreable(value)}/>*/}
+                <Slider
+                    style={{width: 200, height: 40}}
+                    minimumValue={0}
+                    maximumValue={10}
+                    minimumTrackTintColor="#FFFFFF"
+                    maximumTrackTintColor="#000000"
+                    value={aggreable}
+                    onValueChange={value => setAggreable(value)}
+                />
+            </View>
         </View>
     );
 }
